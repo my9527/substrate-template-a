@@ -1,7 +1,7 @@
-import React, { useState, createRef } from 'react';
+import React, { useState, createRef, useEffect } from 'react';
 import { Container, Dimmer, Loader, Grid, Sticky, Message } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
-
+import keyringS from '@polkadot/ui-keyring';
 import { SubstrateContextProvider, useSubstrate } from './substrate-lib';
 import { DeveloperConsole } from './substrate-lib/components';
 
@@ -24,6 +24,12 @@ function Main () {
     keyringState === 'READY' &&
     keyring.getPair(accountAddress);
 
+    useEffect(() => {
+      if(keyring) {
+
+        keyring.setSS58Format(135)
+      }
+    }, [keyring])
   const loader = text =>
     <Dimmer active>
       <Loader size='small'>{text}</Loader>

@@ -1,7 +1,51 @@
 {
   "CUSTOM_TYPES": {
     "Address": "AccountId",
-    "LookupSource": "AccountId"
+    "LookupSource": "AccountId",
+    "CarbonProject": {
+      "name": "Vec<u8>",
+      "max_supply": "u64",
+      "total_supply": "u64",
+      "status": "u8",
+      "owner": "AccountId"
+    },
+    "CarbonAsset": {
+      "project_id": "Hash",
+      "vintage": "Vec<u8>",
+      "initial_supply": "u64",
+      "total_supply": "u64",
+      "status": "u8",
+      "additional": "Vec<u8>"
+    },
+    "IssueInfo": {
+      "asset_id": "Hash",
+      "amount": "u64",
+      "status": "u8",
+      "additional": "Vec<u8>"
+    },
+    "BurnInfo": {
+      "asset_id": "Hash",
+      "amount": "u64",
+      "status": "u8",
+      "additional": "Vec<u8>"
+    },
+    "OrderOf": {
+      "asset_id": "Hash",
+      "money_id": "Hash",
+      "maker": "AccountId",
+      "amount": "u64",
+      "price": "u64",
+      "left_amount": "u64",
+      "direction": "u8",
+      "locked_balance": "u64",
+      "salt": "u64"
+    },
+    "ECRC10": {
+      "symbol": "Vec<u8>",
+      "name": "Vec<u8>",
+      "decimals": "u8",
+      "max_supply": "u64"
+    }
   },
-  "PROVIDER_SOCKET": "ws://127.0.0.1:9944"
+  "PROVIDER_SOCKET": "ws://49.233.3.48:9944"
 }
